@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Mon Jan 07 18:57:40 EST 2019
+org.eclipse.jst.jee.server\:/binary\:/Users/rrajaram/.m2/repository/org/springframework/spring-web/5.0.9.RELEASE/spring-web-5.0.9.RELEASE.jar=/Applications/apache-tomcat-8.5.35/wtpwebapps/demo/WEB-INF/lib/spring-web-5.0.9.RELEASE.jar
+org.eclipse.jst.jee.server\:demo=/Applications/apache-tomcat-8.5.35/wtpwebapps/demo
