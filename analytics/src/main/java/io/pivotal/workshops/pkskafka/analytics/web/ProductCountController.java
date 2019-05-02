@@ -11,7 +11,7 @@ import org.springframework.cloud.stream.binder.kafka.streams.QueryableStoreRegis
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.pivotal.workshops.pkskafka.analytics.binding.AnalyticsBindings;
+import io.pivotal.workshops.pkskafka.analytics.bindings.AnalyticsBindings;
 
 @RestController
 public class ProductCountController {

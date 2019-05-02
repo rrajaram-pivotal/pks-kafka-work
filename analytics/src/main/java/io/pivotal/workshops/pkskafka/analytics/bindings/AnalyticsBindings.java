@@ -1,4 +1,4 @@
-package io.pivotal.workshops.pkskafka.analytics.binding;
+package io.pivotal.workshops.pkskafka.analytics.bindings;
 
 import org.apache.kafka.streams.kstream.KStream;
 import org.apache.kafka.streams.kstream.KTable;

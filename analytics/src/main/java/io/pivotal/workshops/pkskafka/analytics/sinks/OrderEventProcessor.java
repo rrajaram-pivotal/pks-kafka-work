@@ -8,9 +8,7 @@ import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Component;
 
-
-
-import io.pivotal.workshops.pkskafka.analytics.binding.AnalyticsBindings;
+import io.pivotal.workshops.pkskafka.analytics.bindings.AnalyticsBindings;
 import io.pivotal.workshops.pkskafka.analytics.events.OrderEvent;
 import lombok.extern.apachecommons.CommonsLog;
 

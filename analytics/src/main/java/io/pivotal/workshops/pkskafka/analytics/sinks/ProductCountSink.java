@@ -6,7 +6,8 @@ import org.apache.kafka.streams.kstream.KTable;
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.stereotype.Component;
-import io.pivotal.workshops.pkskafka.analytics.binding.AnalyticsBindings;
+
+import io.pivotal.workshops.pkskafka.analytics.bindings.AnalyticsBindings;
 
 @Component
 @CommonsLog

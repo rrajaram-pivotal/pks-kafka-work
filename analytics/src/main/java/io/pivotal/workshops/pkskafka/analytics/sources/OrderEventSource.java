@@ -14,7 +14,7 @@ import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.stereotype.Component;
 
-import io.pivotal.workshops.pkskafka.analytics.binding.AnalyticsBindings;
+import io.pivotal.workshops.pkskafka.analytics.bindings.AnalyticsBindings;
 import io.pivotal.workshops.pkskafka.analytics.events.OrderEvent;
 import lombok.extern.apachecommons.CommonsLog;
 
