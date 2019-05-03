@@ -1,0 +1,22 @@
+[
+{"namespace": "io.pivotal.order.model.avro",
+ "type": "record",
+ "name": "Order",
+ "fields": [
+     {"name": "id", "type": "string"},
+     {"name": "customerId", "type": "long"},
+     {"name": "state", "type": "string"},
+     {"name": "product",  "type": "string"},
+     {"name": "quantity", "type": "int"},
+     {"name": "price", "type": "double"}
+ ]
+},
+{"namespace": "io.pivotal.order.model.avro",
+   "type": "record",
+   "name": "OrderValue",
+    "fields": [
+     {"name": "order", "type": "Order"},
+     {"name": "value", "type": "double"}
+    ]
+}
+]
