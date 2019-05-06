@@ -1,4 +1,4 @@
-package io.pivotal.order.config;
+/*package io.pivotal.order.config;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -58,4 +58,4 @@ public class AvroSerializer<T extends SpecificRecordBase> implements Serializer<
           "Can't serialize data='" + data + "' for topic='" + topic + "'", ex);
     }
   }
-}
+}*/

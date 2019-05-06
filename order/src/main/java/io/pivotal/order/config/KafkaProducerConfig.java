@@ -1,4 +1,4 @@
-package io.pivotal.order.config;
+/*package io.pivotal.order.config;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -40,4 +40,4 @@ public class KafkaProducerConfig {
         return new KafkaTemplate<>(orderProducerFactory());
     }
     
-}
+}*/
