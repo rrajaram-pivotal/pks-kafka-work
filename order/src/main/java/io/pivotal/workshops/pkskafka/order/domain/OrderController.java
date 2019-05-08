@@ -1,132 +1,101 @@
-package io.pivotal.order;
+package io.pivotal.workshops.pkskafka.order.domain;
+
+import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.stream.messaging.Source;
 import org.springframework.cloud.stream.schema.client.ConfluentSchemaRegistryClient;
 import org.springframework.cloud.stream.schema.client.SchemaRegistryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.pivotal.order.model.OrderBean;
-import io.pivotal.order.model.avro.Order;
+import io.pivotal.workshops.pkskafka.order.domain.events.Order;
 
 @RestController
-@RequestMapping("/v1")
-//@EnableSchemaRegistryClient
-//@EnableBinding(Source.class)
+@RequestMapping("/v1/order")
 public class OrderController {
-
- /*   @Autowired
-    private KafkaTemplate<String, Order> orderKafkaTemplate;*/
-    
-/*    @Value(value = "${kafka.producer.topic.orders}")
-    private String orderTopicName;*/
-    
-	@Autowired
-	private Source source;
 	
-    //private final MessageChannel orderOut;
-    
-    /**
-	 * Constructor with bindings for consuming the output channel to the "orders" topic
-	 * @param binding
-	 */
-/*	public OrderController(KafkaOrderStreamBinding binding) {
+	  @Autowired
+	  OrderService service;
 
-		this.orderOut = binding.orderOut();
-	}*/
-    
-	@GetMapping("/orders/{id}")
-	public OrderBean getOrder(@PathVariable(name="id") String id) {
+	  /**
+	   * Persist an Order to Kafka. Returns once the order is successfully written to R nodes where
+	   * R is the replication factor configured in Kafka.
+	   *
+	   * @param order the order to add
+	   * @param timeout the max time to wait for the response from Kafka before timing out the POST
+	   */
+	  @PostMapping (consumes = "application/json")
+	  public String submitOrder(@RequestBody OrderDTO order) {
+		  //Test Code
+			order = new OrderDTO();
+			CustomerDTO customerDTO = new CustomerDTO();
+			CustomerAddressDTO customerAddressDTO = new CustomerAddressDTO();
+			LineItemDTO lineItemDTO = new LineItemDTO();
+			lineItemDTO.setSku("NIKCLE78888001");
+			lineItemDTO.setUpc("0123456789012");
+			lineItemDTO.setEstimatedUnitTax(7.5f);
+			lineItemDTO.setLineNumber(1);
+			lineItemDTO.setOriginialPrice(54.99f);
+			lineItemDTO.setPurchasePrice(44.00f);
+			lineItemDTO.setDiscount(20);
+			lineItemDTO.setEstimatedDeliveryDate("");
 			
-		OrderBean order = new OrderBean();
-		order.setId("1");
-		order.setCustomerId(2L);
-		order.setState("CREATED");
-		order.setQuantity(2);
-		order.setProduct("pen");
-		order.setPrice(5.00);
-		
-		return order;
-		
-	}
+			
+			customerAddressDTO.setAddress("820 Balmoral Ct");
+			customerAddressDTO.setCity("Glen Mills");
+			customerAddressDTO.setState("PA");
+			customerAddressDTO.setZipcode("12342");
+			customerDTO.setFirstName("John");
+			customerDTO.setLastName("Smith");
+			customerDTO.setCustomerAddress(Arrays.asList(customerAddressDTO));
+			customerDTO.setCustomerEmails(Arrays.asList("john.smith@google.com"));
+			customerDTO.setAutomatedEmail(true);
+			
+			order.setLastUpdated("05/02/2019");
+			order.setTimePlaced("05/02/2019");
+			order.setLineItems(Arrays.asList(lineItemDTO));
+			order.setCustomer(customerDTO);
+		  
+		  
+		  
+		  return service.createOrder(order);
+		  
+	  }	
 	
 	
-/*	@PostMapping("/orders")
-	@Consumes(MediaType.APPLICATION_JSON)
-	public void streamOrder(@RequestBody OrderBean orderbean) {
-		
-		System.out.println("OrderID:" + orderbean.getId());
-		System.out.println("OrderBean:" + orderbean.toString());
-		
-		Order order = Order.newBuilder()
-				.setId(orderbean.getId())
-				.setCustomerId(orderbean.getCustomerId())
-				.setState("CREATED")
-				.setProduct(orderbean.getProduct())
-				.setQuantity(orderbean.getQuantity())
-				.setPrice(orderbean.getPrice())
-				.build();
-		
-ListenableFuture<SendResult<String, Order>> future = orderKafkaTemplate.send(orderTopicName, order);
-        
-        future.addCallback(new ListenableFutureCallback<SendResult<String, Order>>() {
-
-            @Override
-            public void onSuccess(SendResult<String, Order> result) {
-                System.out.println("Order Saved with offset=[" + result.getRecordMetadata().offset() + "]");
-            }
-            @Override
-            public void onFailure(Throwable ex) {
-                System.out.println("Unable to save order due to : " + ex.getMessage());
-            }
-
-        });
-
-	}*/
-	
-	@PostMapping("/orderstream")
+/*	@PostMapping("/orderstream")
 	//@Consumes(MediaType.APPLICATION_JSON)
-	public void streamOrders(@RequestBody OrderBean orderbean) {
+	public void streamOrders(@RequestBody OrderDTO orderbean) {
 		
 		System.out.println("OrderID:" + orderbean.getId());
-		System.out.println("OrderBean:" + orderbean.toString());
+		System.out.println("OrderDTO:" + orderbean.toString());
 		
 		Order order = Order.newBuilder()
 				.setId(orderbean.getId())
 				.setCustomerId(orderbean.getCustomerId())
-				.setState("CREATED")
+				//.setState("CREATED")
 				.setProduct(orderbean.getProduct())
 				.setQuantity(orderbean.getQuantity())
 				.setPrice(orderbean.getPrice())
 				.build();
 		
-/*		Message<Order> message = MessageBuilder.withPayload(order)
+		Message<Order> message = MessageBuilder.withPayload(order)
 				.setHeader("kafka_messageKey", order.getId())
 				//.setHeader("contentType", "application/*+avro")
-				.build();*/
+				.build();
 		//this.orderOut.send(message);
-		source.output().send(org.springframework.messaging.support.MessageBuilder.withPayload(order).build());
+		source.output().send(org.springframework.messaging.support.MessageBuilder.withPayload(order)
+				.setHeader("kafka_messageKey", order.getId())
+				.build());
 		//source.output().send(message);
 
 
-	}
+	}*/
 	
-	@Configuration
-	static class ConfluentSchemaRegistryConfiguration {
-		@Bean
-		public SchemaRegistryClient schemaRegistryClient(@Value("${spring.cloud.stream.schemaRegistryClient.endpoint}") String endpoint){
-			ConfluentSchemaRegistryClient client = new ConfluentSchemaRegistryClient();
-			client.setEndpoint(endpoint);
-			return client;
-		}
-	}
 	
 }

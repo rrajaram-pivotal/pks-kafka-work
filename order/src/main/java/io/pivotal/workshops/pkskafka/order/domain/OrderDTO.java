@@ -1,19 +1,22 @@
-package io.pivotal.order.model;
+package io.pivotal.workshops.pkskafka.order.domain;
 
-import lombok.AllArgsConstructor;
+import java.util.List;
+
+
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class OrderBean {
+public class OrderDTO {
+	
+	private String orderID;
+	private String timePlaced;
+	private String lastUpdated;
+	private String state;
+	private CustomerDTO customer;
+	private List<LineItemDTO> lineItems;
+	
+	
+	
+	
 
-	String id;
-	long customerId;
-	String state;
-	String product;
-	int quantity;
-	Double price;
 }
