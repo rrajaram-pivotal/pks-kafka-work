@@ -5089,3 +5089,34 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.apache.av
 2019-05-09 18:38:39,512 [Worker-129: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
 2019-05-09 18:38:39,513 [Worker-129: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-05-09 18:38:39,513 [Worker-129: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/inventory/src/test/resources
+2019-05-09 19:18:57,310 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-09 19:18:57,310 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-09 19:18:57,310 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-09 19:18:57,312 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-09 19:18:57,312 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-05-09 19:19:13,396 [Worker-133: Launching Executing generate-sources in _Users_rrajaram_eclipse-workspace_order] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/rrajaram/eclipse-workspace/order
+2019-05-09 19:19:13,396 [Worker-133: Launching Executing generate-sources in _Users_rrajaram_eclipse-workspace_order] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B generate-sources
+2019-05-09 19:19:15,803 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-09 19:19:15,804 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-09 19:19:15,805 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-05-09 19:19:15,806 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-09 19:19:15,806 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-05-09 19:19:39,914 [Worker-107: Launching Executing generate-sources in _Users_rrajaram_eclipse-workspace_order] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/rrajaram/eclipse-workspace/order
+2019-05-09 19:19:39,914 [Worker-107: Launching Executing generate-sources in _Users_rrajaram_eclipse-workspace_order] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B generate-sources
+2019-05-09 19:21:01,187 [Worker-107: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-09 19:21:01,188 [Worker-107: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-09 19:21:01,188 [Worker-107: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-09 19:21:01,191 [Worker-107: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-09 19:21:01,191 [Worker-107: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-05-09 19:22:01,457 [Worker-133: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-09 19:22:01,457 [Worker-133: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-09 19:22:01,457 [Worker-133: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-09 19:22:01,459 [Worker-133: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-09 19:22:01,459 [Worker-133: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-05-09 19:22:07,308 [Worker-107: Launching Executing generate-sources in _Users_rrajaram_eclipse-workspace_order] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/rrajaram/eclipse-workspace/order
+2019-05-09 19:22:07,308 [Worker-107: Launching Executing generate-sources in _Users_rrajaram_eclipse-workspace_order] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B generate-sources
+2019-05-09 19:22:09,683 [Worker-132: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-09 19:22:09,683 [Worker-132: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-09 19:22:09,685 [Worker-132: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-05-09 19:22:09,687 [Worker-132: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-09 19:22:09,687 [Worker-132: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
