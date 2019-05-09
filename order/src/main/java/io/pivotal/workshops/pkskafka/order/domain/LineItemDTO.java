@@ -8,7 +8,7 @@ public class LineItemDTO {
 	private String sku;
 	private int lineNumber;
 	private String state;
-	private float originialPrice;
+	private float originalPrice;
 	private float discount;
 	private float purchasePrice;
 	private float estimatedUnitTax;

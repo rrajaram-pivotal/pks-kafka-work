@@ -1,7 +1,12 @@
-package io.pivotal.workshops.pkskafka.order.domain;
+package io.pivotal.order;
 
 import java.util.Arrays;
 
+import io.pivotal.workshops.pkskafka.order.domain.CustomerAddressDTO;
+import io.pivotal.workshops.pkskafka.order.domain.CustomerDTO;
+import io.pivotal.workshops.pkskafka.order.domain.LineItemDTO;
+import io.pivotal.workshops.pkskafka.order.domain.OrderDTO;
+import io.pivotal.workshops.pkskafka.order.domain.OrderMapper;
 import io.pivotal.workshops.pkskafka.order.domain.events.Order;
 
 
@@ -18,7 +23,7 @@ public class MapperTest {
 		lineItemDTO.setUpc("0123456789012");
 		lineItemDTO.setEstimatedUnitTax(7.5f);
 		lineItemDTO.setLineNumber(1);
-		lineItemDTO.setOriginialPrice(54.99f);
+		lineItemDTO.setOriginalPrice(54.99f);
 		lineItemDTO.setPurchasePrice(44.00f);
 		lineItemDTO.setDiscount(20);
 		

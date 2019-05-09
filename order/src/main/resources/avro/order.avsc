@@ -31,13 +31,13 @@
     {"name": "customer","doc": "Customer Details","type":"io.pivotal.workshops.pkskafka.order.domain.events.Customer" },
     {"name": "timePlaced","doc": " Time Order Was Placed","type":"string", "default":""},
     {"name": "lastUpdated","doc": "Last Updated Time","type":"string", "default":""},
-    {"name": "state","doc": "Order State Enum","type":{"name": "State","type":"enum","symbols":["placed","in_review","canceled","in_fulfillment"]}, "default":""},
+    {"name": "state","doc": "Order State Enum","type":{"name": "State","type":"string"]}, "default":""},
     {"name": "lineItems","type": {
           "type": "array",
           "items": {"name": "LineItem","type": "record", "fields": [
               {"name": "sku", "type": "string"},
               {"name": "lineNumber", "type": "int"},
-              {"name": "state", "type": {"name": "LineItemState","type": "enum","symbols": ["in_process", "canceled"]}},
+              {"name": "state", "type": {"name": "LineItemState","type": "string"}},
               {"name": "originalPrice", "type": "float"},
               {"name": "discount", "type": "float"},
               {"name": "purchasePrice", "type": "float"},
