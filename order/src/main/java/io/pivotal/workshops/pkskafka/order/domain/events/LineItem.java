@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class LineItem extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -4895711634857952200L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"LineItem\",\"namespace\":\"io.pivotal.workshops.pkskafka.order.domain.events\",\"fields\":[{\"name\":\"sku\",\"type\":\"string\"},{\"name\":\"lineNumber\",\"type\":\"int\"},{\"name\":\"state\",\"type\":{\"type\":\"enum\",\"name\":\"LineItemState\",\"symbols\":[\"in_process\",\"canceled\"]}},{\"name\":\"originalPrice\",\"type\":\"float\"},{\"name\":\"discount\",\"type\":\"float\"},{\"name\":\"purchasePrice\",\"type\":\"float\"},{\"name\":\"estimatedUnitTax\",\"type\":\"float\"},{\"name\":\"upc\",\"type\":\"string\"},{\"name\":\"estimatedDeliveryDate\",\"type\":\"string\",\"default\":\"\"}]}");
+  private static final long serialVersionUID = -8870514049310388239L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"LineItem\",\"namespace\":\"io.pivotal.workshops.pkskafka.order.domain.events\",\"fields\":[{\"name\":\"sku\",\"type\":\"string\"},{\"name\":\"lineNumber\",\"type\":\"int\"},{\"name\":\"state\",\"type\":{\"type\":\"enum\",\"name\":\"LineItemState\",\"symbols\":[\"placed\",\"in_process\",\"validated\",\"insufficient_inventory\",\"canceled\"]}},{\"name\":\"originalPrice\",\"type\":\"float\"},{\"name\":\"discount\",\"type\":\"float\"},{\"name\":\"purchasePrice\",\"type\":\"float\"},{\"name\":\"estimatedUnitTax\",\"type\":\"float\"},{\"name\":\"upc\",\"type\":\"string\"},{\"name\":\"estimatedDeliveryDate\",\"type\":\"string\",\"default\":\"\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();

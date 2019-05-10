@@ -7,7 +7,7 @@ package io.pivotal.workshops.pkskafka.order.domain.events;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public enum LineItemState {
-  in_process, canceled  ;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"enum\",\"name\":\"LineItemState\",\"namespace\":\"io.pivotal.workshops.pkskafka.order.domain.events\",\"symbols\":[\"in_process\",\"canceled\"]}");
+  placed, in_process, validated, insufficient_inventory, canceled  ;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"enum\",\"name\":\"LineItemState\",\"namespace\":\"io.pivotal.workshops.pkskafka.order.domain.events\",\"symbols\":[\"placed\",\"in_process\",\"validated\",\"insufficient_inventory\",\"canceled\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 }

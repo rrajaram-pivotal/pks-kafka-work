@@ -8,6 +8,7 @@ import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.stereotype.Component;
 
+import io.pivotal.workshops.pkskafka.inventory.domain.events.Inventory;
 import io.pivotal.workshops.pkskafka.order.domain.events.Order;
 
 @Component
@@ -45,12 +46,13 @@ public interface ResourceBinding {
 	
 	String INVENTORY_IN = "inventoryin";
 	String INVENTORY_OUT="inventoryout";
+	String INVENTORY_STORE="inventory-store";
 	
 	/**
-	 *  Kafka Streams input channel for consuming messages from the warehouse-inventory topic. 
+	 *  GlobalKTable input channel for consuming messages from the warehouse-inventory topic. 
 	 */
 	@Input (INVENTORY_IN)
-	KTable<String, Order> inventoryIn();	
+	GlobalKTable<String, Inventory> inventoryIn();	
 	
 	
 	/**

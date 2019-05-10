@@ -7,7 +7,7 @@ package io.pivotal.workshops.pkskafka.order.domain.events;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public enum State {
-  placed, in_review, canceled, in_fulfillment  ;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"enum\",\"name\":\"State\",\"namespace\":\"io.pivotal.workshops.pkskafka.order.domain.events\",\"symbols\":[\"placed\",\"in_review\",\"canceled\",\"in_fulfillment\"]}");
+  placed, in_review, insufficient_inventory, validated, canceled, in_fulfillment  ;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"enum\",\"name\":\"State\",\"namespace\":\"io.pivotal.workshops.pkskafka.order.domain.events\",\"symbols\":[\"placed\",\"in_review\",\"insufficient_inventory\",\"validated\",\"canceled\",\"in_fulfillment\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 }
