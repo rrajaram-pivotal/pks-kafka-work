@@ -1,4 +1,4 @@
-package io.pivotal.workshops.pkskafka.order;
+package io.pivotal.workshops.pkskafka;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -11,15 +11,13 @@ import org.springframework.cloud.stream.schema.client.SchemaRegistryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import io.pivotal.workshops.pkskafka.order.domain.OrderBinding;
-
 @SpringBootApplication
 @EnableSchemaRegistryClient
-@EnableBinding(OrderBinding.class)
-public class OrderApplication {
+@EnableBinding(ResourceBinding.class)
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OrderApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 	@Configuration

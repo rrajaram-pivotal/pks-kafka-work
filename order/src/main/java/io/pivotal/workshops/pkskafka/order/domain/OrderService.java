@@ -18,11 +18,11 @@ import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 
+import io.pivotal.workshops.pkskafka.ResourceBinding;
 import io.pivotal.workshops.pkskafka.order.domain.events.LineItem;
 import io.pivotal.workshops.pkskafka.order.domain.events.LineItemState;
 import io.pivotal.workshops.pkskafka.order.domain.events.Order;
 import io.pivotal.workshops.pkskafka.order.domain.events.State;
-import io.pivotal.workshops.pkskafka.order.domain.OrderBinding;
 import lombok.extern.apachecommons.CommonsLog;
 
 @Service
@@ -38,7 +38,7 @@ public class OrderService {
 	 * Constructor with bindings for consuming the output channel to the "orders" topic
 	 * @param binding
 	 */
-	public OrderService(OrderBinding binding) {
+	public OrderService(ResourceBinding binding) {
 		this.orderOut = binding.orderOut();
 	}
 
@@ -100,7 +100,7 @@ public class OrderService {
 		    try {
 		    	
 				 log.info("Getting host info for ");
-				 HostInfo hostInfo = interactiveQueryService.getHostInfo(OrderBinding.ORDER_STORE,
+				 HostInfo hostInfo = interactiveQueryService.getHostInfo(ResourceBinding.ORDER_STORE,
 						orderID, new StringSerializer());
 				log.info("Orders fetched from the same host: " + hostInfo);
 				order = fetchOrderByID(orderID);
@@ -121,7 +121,7 @@ public class OrderService {
 	  		
 	  		try {
 	  		final ReadOnlyKeyValueStore<String, Order> orderStore =
-					interactiveQueryService.getQueryableStore(OrderBinding.ORDER_STORE, 
+					interactiveQueryService.getQueryableStore(ResourceBinding.ORDER_STORE, 
 							QueryableStoreTypes.<String, Order>keyValueStore());
 			
 			order = orderStore.get(orderID);

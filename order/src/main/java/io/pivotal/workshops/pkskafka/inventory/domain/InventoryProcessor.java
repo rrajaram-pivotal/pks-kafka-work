@@ -1,13 +1,7 @@
 package io.pivotal.workshops.pkskafka.inventory.domain;
 
-import java.util.Arrays;
 
-import org.apache.kafka.common.serialization.Serde;
-import org.apache.kafka.common.serialization.Serdes;
-import org.apache.kafka.common.serialization.Serdes.StringSerde;
-import org.apache.kafka.streams.KeyValue;
-import org.apache.kafka.streams.kstream.GlobalKTable;
-import org.apache.kafka.streams.kstream.Joined;
+
 import org.apache.kafka.streams.kstream.KStream;
 import org.apache.kafka.streams.kstream.KTable;
 import org.apache.kafka.streams.kstream.KeyValueMapper;
@@ -19,10 +13,10 @@ import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Component;
 
 import io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde;
+import io.pivotal.workshops.pkskafka.ResourceBinding;
 import io.pivotal.workshops.pkskafka.inventory.domain.events.Inventory;
-import io.pivotal.workshops.pkskafka.inventory.domain.events.LineItem;
-import io.pivotal.workshops.pkskafka.inventory.domain.events.Order;
-import io.pivotal.workshops.pkskafka.inventory.domain.events.State;
+import io.pivotal.workshops.pkskafka.order.domain.events.Order;
+import io.pivotal.workshops.pkskafka.order.domain.events.State;
 import lombok.extern.apachecommons.CommonsLog;
 
 @CommonsLog
@@ -30,20 +24,28 @@ import lombok.extern.apachecommons.CommonsLog;
 public class InventoryProcessor {
 	
 	@StreamListener
-	@SendTo ()
-	public KStream<String,Order> process (@Input (InventoryBindings.ORDER_IN) KStream<String, Order> orderEventStream,
-			@Input (InventoryBindings.INVENTORY_IN) KTable<String, Inventory> inventoryStream)
+	@SendTo (ResourceBinding.ORDER_STREAM_OUT)
+	public KStream<String,Order> validateOrder (@Input (ResourceBinding.ORDER_STREAM_IN) KStream<String, Order> orderEventStream)
 	{
-		try {
+		KStream<String,Order> outputStream = null;
 		
-				KStream<String, Order> outputStream = orderEventStream.flatMapValues(new ValueMapper<Order, > {
+		try {
+			outputStream= orderEventStream.filter((key,value) -> value.getState().equals(State.placed))
+					.mapValues(value -> {value.setState(State.in_fulfillment); return value;});
+					//.foreach((key,value)->log.info("Messages in Order Event Processor ---> " +key + " = " + value.toString()));
+			
+			//outputStream.foreach((key,value)->log.info("Messages in Order Event Processor ---> " +key + " = " + value.toString()));
+			
+						//return outputStream;
+						
+						/*flatMapValues(new ValueMapper<Order, > {
 				
 				     Iterable<String> apply(Order value) {
 				         return Arrays.asList(value.split(" "));
 				     }
 				 });
 		
-			orderEventStream.transform((key,value) -> value.setState(State.validated));
+		//	orderEventStream.transform((key,value) -> value.setState(State.validated));
 			/*inventoryStream.toStream().foreach(
 					(key,value)->log.info("Messages in Order Event Processor ---> " +key + " = " + value));*/
 			
@@ -76,7 +78,7 @@ public class InventoryProcessor {
 		{
 			log.error(ex.getMessage());
 		}
-		
+		return outputStream;
 	}
 	
 

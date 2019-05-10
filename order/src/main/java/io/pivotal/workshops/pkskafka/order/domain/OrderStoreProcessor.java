@@ -4,6 +4,7 @@ import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.stereotype.Component;
 
+import io.pivotal.workshops.pkskafka.ResourceBinding;
 import io.pivotal.workshops.pkskafka.order.domain.events.Order;
 import lombok.extern.apachecommons.CommonsLog;
 
@@ -12,7 +13,7 @@ import lombok.extern.apachecommons.CommonsLog;
 public class OrderStoreProcessor {
 	
 	@StreamListener
-	public void process (@Input (OrderBinding.ORDER_IN) GlobalKTable<String, Order> orderEventStream)
+	public void process (@Input (ResourceBinding.ORDER_IN) GlobalKTable<String, Order> orderEventStream)
 	{
 		try {
 	
