@@ -1,0 +1,11 @@
+FROM re6exp/debian-jessie-oracle-jdk-8
+VOLUME /tmp
+MAINTAINER rrajaram@pivotal.io
+ADD target/order-0.0.1-SNAPSHOT.jar order.jar
+
+ENV SPRING_PROFILE="default"
+
+ENTRYPOINT exec java \
+ -Djava.security.egd=file:/dev/./urandom \
+ -Dspring.profiles.active=$SPRING_PROFILE \
+ -jar order.jar

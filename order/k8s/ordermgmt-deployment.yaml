@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ordermgmt-deployment
+spec:
+  selector:
+    matchLabels:
+      app: ordermgmt-app
+  replicas: 1 # tells deployment to run 3 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: ordermgmt-app
+    spec:
+      containers:
+      - name: ordermgmt-app
+        image: harbor.haas-216.pez.pivotal.io/library/ordermgmt:jessie
+        ports:
+        - containerPort: 8086
+          name: server
+        - containerPort: 8081
+          name: schemaregisty
+        env:
+        - name: spring.cloud.stream.kafka.streams.bindings.inventoryin.consumer.configuration.schema.registry.url
+          value: http://schemaregistry:8081/
+        - name: spring.cloud.stream.kafka.streams.bindings.orderstreamin.consumer.configuration.schema.registry.url
+          value: http://schemaregistry:8081/
+        - name: spring.cloud.stream.kafka.streams.bindings.orderstreamout.producer.configuration.schema.registry.url
+          value: http://schemaregistry:8081/
+        - name: spring.cloud.stream.schemaRegistryClient.endpoint
+          value: http://schemaregistry:8081/
+        - name: spring.cloud.stream.kafka.streams.binder.brokers
+          value: kafka:9071
+        - name: spring.cloud.stream.kafka.binder.brokers
+          value: kafka:9071
+        - name: spring.cloud.stream.kafka.binder.zkNodes
+          value: zookeeper:2181/kafka-operator
+        - name: spring.cloud.stream.kafka.streams.binder.zkNodes
+          value: zookeeper:2181/kafka-operator
+        - name: bootstrap-servers
+          value: kafka:9071
+        - name: spring.cloud.stream.kafka.binder.configuration.security.protocol
+          value: SASL_PLAINTEXT
+        - name: spring.cloud.stream.kafka.binder.configuration.sasl.mechanism
+          value: PLAIN
+        - name: spring.cloud.stream.kafka.binder.configuration.sasl.jaas.config
+          value: "org.apache.kafka.common.security.plain.PlainLoginModule required username='test' password='test123';"
+        - name: spring.cloud.stream.kafka.streams.binder.configuration.security.protocol
+          value: SASL_PLAINTEXT
+        - name: spring.cloud.stream.kafka.streams.binder.configuration.sasl.mechanism
+          value: PLAIN
+        - name: spring.cloud.stream.kafka.streams.binder.configuration.sasl.jaas.config
+          value: "org.apache.kafka.common.security.plain.PlainLoginModule required username='test' password='test123';"
+        - name: spring.cloud.stream.bindings.orderout.destination
+          value: order-event-topic
+        - name: spring.cloud.stream.bindings.orderin.destination
+          value: order-event-topic
+        - name: spring.cloud.stream.schema.avro.schema-locations
+          value: classpath:avro/order.avsc
+        - name: spring.cloud.stream.bindings.orderout.producer.useNativeEncoding
+          value: "true"
+        - name: spring.cloud.stream.kafka.bindings.orderout.producer.configuration.key.serializer
+          value: org.apache.kafka.common.serialization.StringSerializer
+        - name: spring.cloud.stream.kafka.bindings.orderout.producer.configuration.value.serializer
+          value: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerializer
