@@ -8,20 +8,19 @@ import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.stereotype.Component;
 
-import io.pivotal.workshops.pkskafka.inventory.domain.events.Inventory;
-import io.pivotal.workshops.pkskafka.order.domain.events.Order;
+import io.pivotal.workshops.pkskafka.domain.events.inventory.Inventory;
+import io.pivotal.workshops.pkskafka.domain.events.order.Order;
 
 @Component
 public interface ResourceBinding {
 	
 	String ORDER_OUT = "orderout";
 	
-	String ORDER_IN = "orderin";
-	
-	String  ORDER_STREAM_OUT = "orderstreamout";
-	String  ORDER_STREAM_IN = "orderstreamin";
-	
+	String ORDER_STREAM_IN = "orderstreamin";
+
 	String ORDER_STORE = "order-store";
+	
+	//String ORDER_IN = "orderin";
 		
 	/**
 	 *  Message Channel for writing to the OrderOut Channel that in turn writes the messages to the 
@@ -31,37 +30,14 @@ public interface ResourceBinding {
 	MessageChannel orderOut();
 	
 	/**
-	 *  Kafka Streams for consuming messages from the OrderIn Input Channel. 
+	 *  KTable for reading messages from the order-event-topic 
 	 */
-	@Input (ORDER_IN)
-	GlobalKTable<String, Order> ordersIn();
-	
-
-	@Output (ORDER_STREAM_OUT)
-	KStream<String, Order> orderStreamOut();
-	
 	@Input (ORDER_STREAM_IN)
-	KStream<String, Order> orderStreamIn();	
-
-	
-	String INVENTORY_IN = "inventoryin";
-	String INVENTORY_OUT="inventoryout";
-	String INVENTORY_STORE="inventory-store";
-	
-	/**
-	 *  GlobalKTable input channel for consuming messages from the warehouse-inventory topic. 
-	 */
-	@Input (INVENTORY_IN)
-	GlobalKTable<String, Inventory> inventoryIn();	
+	KTable<String, Order> orderStreamIn();
 	
 	
-	/**
-	 *  Kafka Streams input channel for consuming messages from the warehouse-inventory topic. 
-	 */
-	@Output (INVENTORY_OUT)
-	MessageChannel inventoryOut();
-		
+	//@Input (ORDER_IN)
+	//KTable<String, Order> orderIn();
 	
-
 
 }

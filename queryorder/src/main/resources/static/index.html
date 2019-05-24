@@ -1,0 +1,49 @@
+<!doctype html>
+<html ng-app="queryorderdemo">
+	<head>
+		<title>Query Order</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    	<script src="queryorder.js"></script>
+		<style>
+		table {
+		  border-collapse: collapse;
+		}
+		
+		table, td, th {
+		  padding: 10px;	
+		  text-align: left;
+		  border: 1px solid gray;
+		  font-size: 14px;
+		}
+		</style>    	
+	</head>
+
+	<body>
+		<table ng-controller="QueryOrder" border="1">
+			<tr>
+				<td><b>Order Id</b></td>
+				<td><b>Time Placed</b></td>
+				<td><b>Time Last Updated</b></td>
+				<td><b>Status</b></td>
+				<td><b>First Name</b></td>
+				<td><b>Last Name</b></td>
+				<td><b>Automated Emails?</b></td>
+				<td><b>Address</b></td>
+				<td><b>Product SKU</b></td>
+				<td><b>PurchasePrice</b></td>
+			</tr>
+			<tr ng-repeat="order in orderlist | orderBy: '-state'" >
+		  		<td>{{order.orderID}}</td>
+		  		<td>{{order.timePlaced}}</td>
+		  		<td>{{order.lastUpdated}}</td>
+		  		<td>{{order.state}}</td>
+		  		<td>{{order.customer.firstName}}</td>
+		  		<td>{{order.customer.lastName}}</td>
+		  		<td>{{order.customer.automatedEmail}}</td>
+		  		<td>{{order.customer.customerAddress[0].address}},<br>{{order.customer.customerAddress[0].city}},{{order.customer.customerAddress[0].state}} - {{order.customer.customerAddress[0].zipcode}}</td>
+				<td>{{order.lineItems[0].sku}}</td>
+				<td>{{order.lineItems[0].purchasePrice}}</td>
+			</tr>
+		</table>
+	</body>
+</html>

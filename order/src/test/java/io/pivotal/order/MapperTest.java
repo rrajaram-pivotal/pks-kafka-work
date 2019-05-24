@@ -2,12 +2,12 @@ package io.pivotal.order;
 
 import java.util.Arrays;
 
+import io.pivotal.workshops.pkskafka.domain.events.order.Order;
 import io.pivotal.workshops.pkskafka.order.domain.CustomerAddressDTO;
 import io.pivotal.workshops.pkskafka.order.domain.CustomerDTO;
 import io.pivotal.workshops.pkskafka.order.domain.LineItemDTO;
 import io.pivotal.workshops.pkskafka.order.domain.OrderDTO;
 import io.pivotal.workshops.pkskafka.order.domain.OrderMapper;
-import io.pivotal.workshops.pkskafka.order.domain.events.Order;
 
 
 
@@ -21,11 +21,11 @@ public class MapperTest {
 		LineItemDTO lineItemDTO = new LineItemDTO();
 		lineItemDTO.setSku("NIKCLE78888001");
 		lineItemDTO.setUpc("0123456789012");
-		lineItemDTO.setEstimatedUnitTax(7.5f);
+	
 		lineItemDTO.setLineNumber(1);
-		lineItemDTO.setOriginalPrice(54.99f);
+
 		lineItemDTO.setPurchasePrice(44.00f);
-		lineItemDTO.setDiscount(20);
+
 		
 		
 		customerAddressDTO.setAddress("820 Balmoral Ct");

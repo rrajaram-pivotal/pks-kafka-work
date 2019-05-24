@@ -1,9 +1,0 @@
-{
-        "type": "record",
-        "namespace": "io.pivotal.workshops.pkskafka.inventory.domain.events",
-        "name": "Inventory",
-        "fields": [
-          { "name": "sku", "type": "string", "doc": "Sku of the product" },
-          { "name": "quantity", "type": "int" }
-          ]
-}

@@ -1,10 +1,10 @@
 package io.pivotal.workshops.pkskafka.order.domain;
 
 
-import io.pivotal.workshops.pkskafka.order.domain.events.Customer;
-import io.pivotal.workshops.pkskafka.order.domain.events.CustomerAddress;
-import io.pivotal.workshops.pkskafka.order.domain.events.LineItem;
-import io.pivotal.workshops.pkskafka.order.domain.events.Order;
+import io.pivotal.workshops.pkskafka.domain.events.order.Customer;
+import io.pivotal.workshops.pkskafka.domain.events.order.CustomerAddr;
+import io.pivotal.workshops.pkskafka.domain.events.order.LineItem;
+import io.pivotal.workshops.pkskafka.domain.events.order.Order;
 import ma.glasnost.orika.BoundMapperFacade;
 
 import ma.glasnost.orika.MapperFactory;
@@ -26,7 +26,7 @@ public class OrderMapper {
 	    	.mapNulls(false).mapNullsInReverse(true)
 	    	.byDefault().register();	
 	    	
-	    	mapperFactory.classMap(CustomerAddressDTO.class, CustomerAddress.class)
+	    	mapperFactory.classMap(CustomerAddressDTO.class, CustomerAddr.class)
 	    	.mapNulls(false).mapNullsInReverse(true)
 	    	.byDefault().register();	
 	    	

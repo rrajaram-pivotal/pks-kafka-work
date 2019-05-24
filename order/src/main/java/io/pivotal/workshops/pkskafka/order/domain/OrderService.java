@@ -19,10 +19,7 @@ import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 
 import io.pivotal.workshops.pkskafka.ResourceBinding;
-import io.pivotal.workshops.pkskafka.order.domain.events.LineItem;
-import io.pivotal.workshops.pkskafka.order.domain.events.LineItemState;
-import io.pivotal.workshops.pkskafka.order.domain.events.Order;
-import io.pivotal.workshops.pkskafka.order.domain.events.State;
+import io.pivotal.workshops.pkskafka.domain.events.order.*;
 import lombok.extern.apachecommons.CommonsLog;
 
 @Service
@@ -60,11 +57,13 @@ public class OrderService {
 					order = orderMapper.convertOrderDTOToEvent(orderDTO);
 					order.setOrderID(UUID.randomUUID().toString());
 					order.setState(State.placed);
+					log.info("Order Mapping To Event Done ---" + order.toString());
 					LineItem lineItem;
 					for (Iterator<LineItem> i = order.getLineItems().iterator(); i.hasNext(); ) 
 					{
 						lineItem = i.next();
 						lineItem.setState(LineItemState.in_process);
+						lineItem.setEstimatedDeliveryDate("");
 						
 					}					
 				}
@@ -81,6 +80,7 @@ public class OrderService {
 			log.info("Order Event State set " + order.toString());
 			log.info("Order Out Channel " + orderOut);
 			orderOut.send(MessageBuilder.withPayload(order).setHeader("kafka_messageKey", order.getOrderID()).build());
+			response = order.getOrderID().toString();
 		}
 		catch (Exception ex)
 		{
@@ -92,29 +92,12 @@ public class OrderService {
 	}
 	
 	
-	  public OrderDTO findOrder(String orderID) {
-		    log.info("Running GET on for single instance scenario");
-			OrderMapper orderMapper = new OrderMapper();
-		    Order order = null;
-		    OrderDTO orderDTO = null;
-		    try {
-		    	
-				 log.info("Getting host info for ");
-				 HostInfo hostInfo = interactiveQueryService.getHostInfo(ResourceBinding.ORDER_STORE,
-						orderID, new StringSerializer());
-				log.info("Orders fetched from the same host: " + hostInfo);
-				order = fetchOrderByID(orderID);
-				orderDTO = orderMapper.convertOrderEventToDTO(order);
-				log.info("Order details " +  order.toString());
-		    	
-		    }catch (Exception ex)
-		    {
-		    	ex.printStackTrace();
-		    	log.error("Exception getting order details" + ex.getMessage());
-		    }
-		    return orderDTO;
-		  }
-
+		/**
+		 * Fetches Order details for the given order id. This is used to generate
+		 * an update event.
+		 * @param orderID
+		 * @return
+		 */
 	  	private Order fetchOrderByID(String orderID)
 	  	{
 	  		Order order = null;
@@ -123,7 +106,9 @@ public class OrderService {
 	  		final ReadOnlyKeyValueStore<String, Order> orderStore =
 					interactiveQueryService.getQueryableStore(ResourceBinding.ORDER_STORE, 
 							QueryableStoreTypes.<String, Order>keyValueStore());
-			
+	  		System.out.println("Current Hostb Infor --- > " + interactiveQueryService.getCurrentHostInfo());
+			System.out.println("Find Order for ID --> " + orderID + "in Order Store " + orderStore);
+			System.out.println(orderStore.all().toString());
 			order = orderStore.get(orderID);
 	  		} catch (Exception ex) {
 	  			ex.printStackTrace();

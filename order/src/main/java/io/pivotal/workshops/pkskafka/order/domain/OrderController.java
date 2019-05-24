@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.pivotal.workshops.pkskafka.order.domain.events.Order;
+import io.pivotal.workshops.pkskafka.domain.events.order.Order;
 import lombok.extern.apachecommons.CommonsLog;
 
 @CommonsLog
@@ -40,19 +40,4 @@ public class OrderController {
 		  
 	  }	
 	  
-	  
-
-	  /**
-	   * Queries the GlobalKTable for order details based on an id
-	   * @param order the order to add
-	   * @param timeout the max time to wait for the response from Kafka before timing out the POST
-	   */
-	  @GetMapping("/{id}")
-	  public OrderDTO getOrder(@PathVariable("id") String orderID) {
-		  log.info("In Find Order GET Method" );
-		 
-		  return service.findOrder(orderID);
-		  
-	  }	  
-		
 }

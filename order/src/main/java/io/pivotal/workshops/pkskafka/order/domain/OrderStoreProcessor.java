@@ -1,36 +1,32 @@
 package io.pivotal.workshops.pkskafka.order.domain;
 import org.apache.kafka.streams.kstream.GlobalKTable;
+import org.apache.kafka.streams.kstream.KStream;
+import org.apache.kafka.streams.kstream.KTable;
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.stereotype.Component;
 
 import io.pivotal.workshops.pkskafka.ResourceBinding;
-import io.pivotal.workshops.pkskafka.order.domain.events.Order;
+import io.pivotal.workshops.pkskafka.domain.events.order.Order;
 import lombok.extern.apachecommons.CommonsLog;
 
 @CommonsLog
-@Component
+//@Component
 public class OrderStoreProcessor {
 	
-	@StreamListener
-	public void process (@Input (ResourceBinding.ORDER_IN) GlobalKTable<String, Order> orderEventStream)
+/*	@StreamListener
+	public void process (@Input (ResourceBinding.ORDER_IN) KTable<String, Order> orderEventStream)
 	{
 		try {
 	
 			String storename = orderEventStream.queryableStoreName();
 			log.info("--------------------------------------------------" + storename);
-			//foreach(
-			//		(key,value)->log.info("Messages in Order Event Processor ---> " +key + " = " + value.getOrderID()));
-			/*return orderEventStream
-					.map((key,value)-> new KeyValue<>(value.getProductId(), "0"))
-					.groupByKey()
-					.count(Materialized.as(AnalyticsBindings.PRODUCT_COUNT_MV))
-					.toStream();*/
+
 		} catch (Exception ex) 
 		{
 			log.error(ex.getMessage());
 		}
 		
 	}
-
+*/
 }
