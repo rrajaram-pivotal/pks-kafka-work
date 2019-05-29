@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import io.pivotal.workshops.pkskafka.domain.events.inventory.Inventory;
 import io.pivotal.workshops.pkskafka.domain.events.order.Order;
+import io.pivotal.workshops.pkskafka.domain.events.ordervalidation.OrderValidation;
 
 @Component
 public interface ResourceBinding {
@@ -19,6 +20,8 @@ public interface ResourceBinding {
 	String ORDER_STREAM_IN = "orderstreamin";
 
 	String ORDER_STORE = "order-store";
+	
+	String  ORDER_VALIDATION_STREAM_IN = "ordervalidationstreamin";
 	
 	//String ORDER_IN = "orderin";
 		
@@ -34,6 +37,9 @@ public interface ResourceBinding {
 	 */
 	@Input (ORDER_STREAM_IN)
 	KTable<String, Order> orderStreamIn();
+	
+	@Input (ORDER_VALIDATION_STREAM_IN)
+	KStream<String, OrderValidation> orderValidationStreamIn();
 	
 	
 	//@Input (ORDER_IN)
