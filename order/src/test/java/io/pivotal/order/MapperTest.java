@@ -3,11 +3,11 @@ package io.pivotal.order;
 import java.util.Arrays;
 
 import io.pivotal.workshops.pkskafka.domain.events.order.Order;
-import io.pivotal.workshops.pkskafka.order.domain.CustomerAddressDTO;
-import io.pivotal.workshops.pkskafka.order.domain.CustomerDTO;
-import io.pivotal.workshops.pkskafka.order.domain.LineItemDTO;
-import io.pivotal.workshops.pkskafka.order.domain.OrderDTO;
-import io.pivotal.workshops.pkskafka.order.domain.OrderMapper;
+import io.pivotal.workshops.pkskafka.order.order.domain.CustomerAddressDTO;
+import io.pivotal.workshops.pkskafka.order.order.domain.CustomerDTO;
+import io.pivotal.workshops.pkskafka.order.order.domain.LineItemDTO;
+import io.pivotal.workshops.pkskafka.order.order.domain.OrderDTO;
+import io.pivotal.workshops.pkskafka.order.order.domain.OrderMapper;
 
 
 

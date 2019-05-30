@@ -11,28 +11,36 @@ import org.springframework.stereotype.Component;
 
 import io.pivotal.workshops.pkskafka.domain.events.inventory.Inventory;
 import io.pivotal.workshops.pkskafka.domain.events.order.Order;
+import io.pivotal.workshops.pkskafka.domain.events.ordervalidation.OrderValidation;
 
 @Component
 public interface InventoryBindings {
 	
 
 	
-	String  ORDER_STREAM_OUT = "orderstreamout";
+	String  ORDER_VALIDATION_STREAM_OUT = "ordervalidationstreamout";
+	String  ORDER_VALIDATION_STREAM_IN = "ordervalidationstreamin";
 	String  ORDER_STREAM_IN = "orderstreamin";
 	
-	String ORDER_STORE = "order-store";
+	//String  UPDATE_INV_ORDER_STREAM_IN = "updinvorderstreamin";
 	
+	@Input (ORDER_VALIDATION_STREAM_IN)
+	KStream<String, OrderValidation> orderValidationStreamIn();	
 	
+	@Output (ORDER_VALIDATION_STREAM_OUT)
+	KStream<String, OrderValidation> orderValidationStreamOut();
 
-	@Output (ORDER_STREAM_OUT)
-	KStream<String, Order> orderStreamOut();
 	
 	@Input (ORDER_STREAM_IN)
 	KStream<String, Order> orderStreamIn();	
+	
+	//@Input (UPDATE_INV_ORDER_STREAM_IN)
+	//KStream<String, Order> updInvOrderStreamIn();
 
 	
 	String INVENTORY_IN = "inventoryin";
 	String INVENTORY_OUT="inventoryout";
+	String INVENTORY_STREAM_OUT="inventorystreamout";
 	String INVENTORY_STORE="inventory-store";
 	
 	/**
@@ -47,8 +55,13 @@ public interface InventoryBindings {
 	 */
 	@Output (INVENTORY_OUT)
 	MessageChannel inventoryOut();
-		
 	
+	/**
+	 * Output Channel to Inventory Stream
+	 * @return
+	 */
+	//@Output (INVENTORY_STREAM_OUT)
+	//KStream<String, Inventory> inventoryStreamOut();	
 
 
 }

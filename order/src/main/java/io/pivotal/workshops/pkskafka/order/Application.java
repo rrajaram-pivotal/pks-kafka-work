@@ -1,4 +1,4 @@
-package io.pivotal.workshops.pkskafka;
+package io.pivotal.workshops.pkskafka.order;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;

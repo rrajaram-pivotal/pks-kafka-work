@@ -1,4 +1,4 @@
-package io.pivotal.workshops.pkskafka.order.domain;
+package io.pivotal.workshops.pkskafka.order.order.domain;
 
 import lombok.Data;
 
@@ -11,5 +11,6 @@ public class LineItemDTO {
 	private float purchasePrice;
 	private String upc;
 	private String estimatedDeliveryDate;
+	private String orderID;
 
 }

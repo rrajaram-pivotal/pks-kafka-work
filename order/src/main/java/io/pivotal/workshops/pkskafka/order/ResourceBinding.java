@@ -1,4 +1,4 @@
-package io.pivotal.workshops.pkskafka;
+package io.pivotal.workshops.pkskafka.order;
 
 import org.apache.kafka.streams.kstream.GlobalKTable;
 import org.apache.kafka.streams.kstream.KStream;
@@ -19,6 +19,10 @@ public interface ResourceBinding {
 	
 	String ORDER_STREAM_IN = "orderstreamin";
 
+	String ORDER_STREAM_OUT = "orderstreamout";
+	
+	String ORDER_AGG_STREAM_IN = "orderaggstreamin";
+	
 	String ORDER_STORE = "order-store";
 	
 	String  ORDER_VALIDATION_STREAM_IN = "ordervalidationstreamin";
@@ -33,10 +37,23 @@ public interface ResourceBinding {
 	MessageChannel orderOut();
 	
 	/**
+	 *  KStream for writing messages to order-event-topic 
+	 */
+	@Output (ORDER_STREAM_OUT)
+	KStream<String, Order> orderStreamOut();	
+	
+	/**
 	 *  KTable for reading messages from the order-event-topic 
 	 */
 	@Input (ORDER_STREAM_IN)
 	KTable<String, Order> orderStreamIn();
+	
+
+	/**
+	 *  KStream for reading messages from the order-event-topic 
+	 */
+	@Input (ORDER_AGG_STREAM_IN)
+	KStream<String, Order> orderAggStreamIn();
 	
 	@Input (ORDER_VALIDATION_STREAM_IN)
 	KStream<String, OrderValidation> orderValidationStreamIn();

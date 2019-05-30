@@ -1,4 +1,4 @@
-package io.pivotal.workshops.pkskafka.order.domain;
+package io.pivotal.workshops.pkskafka.order.order.domain;
 
 import lombok.Data;
 

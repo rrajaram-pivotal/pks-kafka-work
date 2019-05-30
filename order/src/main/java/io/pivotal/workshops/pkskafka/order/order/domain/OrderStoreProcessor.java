@@ -1,4 +1,4 @@
-package io.pivotal.workshops.pkskafka.order.domain;
+package io.pivotal.workshops.pkskafka.order.order.domain;
 import org.apache.kafka.streams.kstream.GlobalKTable;
 import org.apache.kafka.streams.kstream.KStream;
 import org.apache.kafka.streams.kstream.KTable;
@@ -6,8 +6,8 @@ import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.stereotype.Component;
 
-import io.pivotal.workshops.pkskafka.ResourceBinding;
 import io.pivotal.workshops.pkskafka.domain.events.order.Order;
+import io.pivotal.workshops.pkskafka.order.ResourceBinding;
 import lombok.extern.apachecommons.CommonsLog;
 
 @CommonsLog

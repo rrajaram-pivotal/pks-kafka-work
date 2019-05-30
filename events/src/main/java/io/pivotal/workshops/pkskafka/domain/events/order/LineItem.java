@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class LineItem extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -7174090996992690044L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"LineItem\",\"namespace\":\"io.pivotal.workshops.pkskafka.domain.events.order\",\"fields\":[{\"name\":\"sku\",\"type\":\"string\"},{\"name\":\"lineNumber\",\"type\":\"int\"},{\"name\":\"state\",\"type\":{\"type\":\"enum\",\"name\":\"LineItemState\",\"symbols\":[\"placed\",\"in_process\",\"validated\",\"insufficient_inventory\",\"canceled\"]}},{\"name\":\"purchasePrice\",\"type\":\"float\"},{\"name\":\"upc\",\"type\":\"string\"},{\"name\":\"estimatedDeliveryDate\",\"type\":\"string\",\"default\":\"\"}]}");
+  private static final long serialVersionUID = 6797082311870722766L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"LineItem\",\"namespace\":\"io.pivotal.workshops.pkskafka.domain.events.order\",\"fields\":[{\"name\":\"sku\",\"type\":\"string\"},{\"name\":\"orderID\",\"type\":\"string\",\"doc\":\"Order Identifier\",\"default\":\"\"},{\"name\":\"lineNumber\",\"type\":\"int\"},{\"name\":\"state\",\"type\":{\"type\":\"enum\",\"name\":\"LineItemState\",\"symbols\":[\"placed\",\"in_process\",\"validated\",\"insufficient_inventory\",\"canceled\"]}},{\"name\":\"purchasePrice\",\"type\":\"float\"},{\"name\":\"upc\",\"type\":\"string\"},{\"name\":\"estimatedDeliveryDate\",\"type\":\"string\",\"default\":\"\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -52,6 +52,8 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
   }
 
   @Deprecated public java.lang.CharSequence sku;
+  /** Order Identifier */
+  @Deprecated public java.lang.CharSequence orderID;
   @Deprecated public int lineNumber;
   @Deprecated public io.pivotal.workshops.pkskafka.domain.events.order.LineItemState state;
   @Deprecated public float purchasePrice;
@@ -68,14 +70,16 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
   /**
    * All-args constructor.
    * @param sku The new value for sku
+   * @param orderID Order Identifier
    * @param lineNumber The new value for lineNumber
    * @param state The new value for state
    * @param purchasePrice The new value for purchasePrice
    * @param upc The new value for upc
    * @param estimatedDeliveryDate The new value for estimatedDeliveryDate
    */
-  public LineItem(java.lang.CharSequence sku, java.lang.Integer lineNumber, io.pivotal.workshops.pkskafka.domain.events.order.LineItemState state, java.lang.Float purchasePrice, java.lang.CharSequence upc, java.lang.CharSequence estimatedDeliveryDate) {
+  public LineItem(java.lang.CharSequence sku, java.lang.CharSequence orderID, java.lang.Integer lineNumber, io.pivotal.workshops.pkskafka.domain.events.order.LineItemState state, java.lang.Float purchasePrice, java.lang.CharSequence upc, java.lang.CharSequence estimatedDeliveryDate) {
     this.sku = sku;
+    this.orderID = orderID;
     this.lineNumber = lineNumber;
     this.state = state;
     this.purchasePrice = purchasePrice;
@@ -88,11 +92,12 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
   public java.lang.Object get(int field$) {
     switch (field$) {
     case 0: return sku;
-    case 1: return lineNumber;
-    case 2: return state;
-    case 3: return purchasePrice;
-    case 4: return upc;
-    case 5: return estimatedDeliveryDate;
+    case 1: return orderID;
+    case 2: return lineNumber;
+    case 3: return state;
+    case 4: return purchasePrice;
+    case 5: return upc;
+    case 6: return estimatedDeliveryDate;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -102,11 +107,12 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: sku = (java.lang.CharSequence)value$; break;
-    case 1: lineNumber = (java.lang.Integer)value$; break;
-    case 2: state = (io.pivotal.workshops.pkskafka.domain.events.order.LineItemState)value$; break;
-    case 3: purchasePrice = (java.lang.Float)value$; break;
-    case 4: upc = (java.lang.CharSequence)value$; break;
-    case 5: estimatedDeliveryDate = (java.lang.CharSequence)value$; break;
+    case 1: orderID = (java.lang.CharSequence)value$; break;
+    case 2: lineNumber = (java.lang.Integer)value$; break;
+    case 3: state = (io.pivotal.workshops.pkskafka.domain.events.order.LineItemState)value$; break;
+    case 4: purchasePrice = (java.lang.Float)value$; break;
+    case 5: upc = (java.lang.CharSequence)value$; break;
+    case 6: estimatedDeliveryDate = (java.lang.CharSequence)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -125,6 +131,23 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
    */
   public void setSku(java.lang.CharSequence value) {
     this.sku = value;
+  }
+
+  /**
+   * Gets the value of the 'orderID' field.
+   * @return Order Identifier
+   */
+  public java.lang.CharSequence getOrderID() {
+    return orderID;
+  }
+
+  /**
+   * Sets the value of the 'orderID' field.
+   * Order Identifier
+   * @param value the value to set.
+   */
+  public void setOrderID(java.lang.CharSequence value) {
+    this.orderID = value;
   }
 
   /**
@@ -240,6 +263,8 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
     implements org.apache.avro.data.RecordBuilder<LineItem> {
 
     private java.lang.CharSequence sku;
+    /** Order Identifier */
+    private java.lang.CharSequence orderID;
     private int lineNumber;
     private io.pivotal.workshops.pkskafka.domain.events.order.LineItemState state;
     private float purchasePrice;
@@ -261,25 +286,29 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
         this.sku = data().deepCopy(fields()[0].schema(), other.sku);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.lineNumber)) {
-        this.lineNumber = data().deepCopy(fields()[1].schema(), other.lineNumber);
+      if (isValidValue(fields()[1], other.orderID)) {
+        this.orderID = data().deepCopy(fields()[1].schema(), other.orderID);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.state)) {
-        this.state = data().deepCopy(fields()[2].schema(), other.state);
+      if (isValidValue(fields()[2], other.lineNumber)) {
+        this.lineNumber = data().deepCopy(fields()[2].schema(), other.lineNumber);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.purchasePrice)) {
-        this.purchasePrice = data().deepCopy(fields()[3].schema(), other.purchasePrice);
+      if (isValidValue(fields()[3], other.state)) {
+        this.state = data().deepCopy(fields()[3].schema(), other.state);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.upc)) {
-        this.upc = data().deepCopy(fields()[4].schema(), other.upc);
+      if (isValidValue(fields()[4], other.purchasePrice)) {
+        this.purchasePrice = data().deepCopy(fields()[4].schema(), other.purchasePrice);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.estimatedDeliveryDate)) {
-        this.estimatedDeliveryDate = data().deepCopy(fields()[5].schema(), other.estimatedDeliveryDate);
+      if (isValidValue(fields()[5], other.upc)) {
+        this.upc = data().deepCopy(fields()[5].schema(), other.upc);
         fieldSetFlags()[5] = true;
+      }
+      if (isValidValue(fields()[6], other.estimatedDeliveryDate)) {
+        this.estimatedDeliveryDate = data().deepCopy(fields()[6].schema(), other.estimatedDeliveryDate);
+        fieldSetFlags()[6] = true;
       }
     }
 
@@ -293,25 +322,29 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
         this.sku = data().deepCopy(fields()[0].schema(), other.sku);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.lineNumber)) {
-        this.lineNumber = data().deepCopy(fields()[1].schema(), other.lineNumber);
+      if (isValidValue(fields()[1], other.orderID)) {
+        this.orderID = data().deepCopy(fields()[1].schema(), other.orderID);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.state)) {
-        this.state = data().deepCopy(fields()[2].schema(), other.state);
+      if (isValidValue(fields()[2], other.lineNumber)) {
+        this.lineNumber = data().deepCopy(fields()[2].schema(), other.lineNumber);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.purchasePrice)) {
-        this.purchasePrice = data().deepCopy(fields()[3].schema(), other.purchasePrice);
+      if (isValidValue(fields()[3], other.state)) {
+        this.state = data().deepCopy(fields()[3].schema(), other.state);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.upc)) {
-        this.upc = data().deepCopy(fields()[4].schema(), other.upc);
+      if (isValidValue(fields()[4], other.purchasePrice)) {
+        this.purchasePrice = data().deepCopy(fields()[4].schema(), other.purchasePrice);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.estimatedDeliveryDate)) {
-        this.estimatedDeliveryDate = data().deepCopy(fields()[5].schema(), other.estimatedDeliveryDate);
+      if (isValidValue(fields()[5], other.upc)) {
+        this.upc = data().deepCopy(fields()[5].schema(), other.upc);
         fieldSetFlags()[5] = true;
+      }
+      if (isValidValue(fields()[6], other.estimatedDeliveryDate)) {
+        this.estimatedDeliveryDate = data().deepCopy(fields()[6].schema(), other.estimatedDeliveryDate);
+        fieldSetFlags()[6] = true;
       }
     }
 
@@ -355,6 +388,49 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
     }
 
     /**
+      * Gets the value of the 'orderID' field.
+      * Order Identifier
+      * @return The value.
+      */
+    public java.lang.CharSequence getOrderID() {
+      return orderID;
+    }
+
+    /**
+      * Sets the value of the 'orderID' field.
+      * Order Identifier
+      * @param value The value of 'orderID'.
+      * @return This builder.
+      */
+    public io.pivotal.workshops.pkskafka.domain.events.order.LineItem.Builder setOrderID(java.lang.CharSequence value) {
+      validate(fields()[1], value);
+      this.orderID = value;
+      fieldSetFlags()[1] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'orderID' field has been set.
+      * Order Identifier
+      * @return True if the 'orderID' field has been set, false otherwise.
+      */
+    public boolean hasOrderID() {
+      return fieldSetFlags()[1];
+    }
+
+
+    /**
+      * Clears the value of the 'orderID' field.
+      * Order Identifier
+      * @return This builder.
+      */
+    public io.pivotal.workshops.pkskafka.domain.events.order.LineItem.Builder clearOrderID() {
+      orderID = null;
+      fieldSetFlags()[1] = false;
+      return this;
+    }
+
+    /**
       * Gets the value of the 'lineNumber' field.
       * @return The value.
       */
@@ -368,9 +444,9 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * @return This builder.
       */
     public io.pivotal.workshops.pkskafka.domain.events.order.LineItem.Builder setLineNumber(int value) {
-      validate(fields()[1], value);
+      validate(fields()[2], value);
       this.lineNumber = value;
-      fieldSetFlags()[1] = true;
+      fieldSetFlags()[2] = true;
       return this;
     }
 
@@ -379,7 +455,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * @return True if the 'lineNumber' field has been set, false otherwise.
       */
     public boolean hasLineNumber() {
-      return fieldSetFlags()[1];
+      return fieldSetFlags()[2];
     }
 
 
@@ -388,7 +464,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * @return This builder.
       */
     public io.pivotal.workshops.pkskafka.domain.events.order.LineItem.Builder clearLineNumber() {
-      fieldSetFlags()[1] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
 
@@ -406,9 +482,9 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * @return This builder.
       */
     public io.pivotal.workshops.pkskafka.domain.events.order.LineItem.Builder setState(io.pivotal.workshops.pkskafka.domain.events.order.LineItemState value) {
-      validate(fields()[2], value);
+      validate(fields()[3], value);
       this.state = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[3] = true;
       return this;
     }
 
@@ -417,7 +493,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * @return True if the 'state' field has been set, false otherwise.
       */
     public boolean hasState() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[3];
     }
 
 
@@ -427,7 +503,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       */
     public io.pivotal.workshops.pkskafka.domain.events.order.LineItem.Builder clearState() {
       state = null;
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
 
@@ -445,9 +521,9 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * @return This builder.
       */
     public io.pivotal.workshops.pkskafka.domain.events.order.LineItem.Builder setPurchasePrice(float value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.purchasePrice = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this;
     }
 
@@ -456,7 +532,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * @return True if the 'purchasePrice' field has been set, false otherwise.
       */
     public boolean hasPurchasePrice() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
 
 
@@ -465,7 +541,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * @return This builder.
       */
     public io.pivotal.workshops.pkskafka.domain.events.order.LineItem.Builder clearPurchasePrice() {
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -483,9 +559,9 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * @return This builder.
       */
     public io.pivotal.workshops.pkskafka.domain.events.order.LineItem.Builder setUpc(java.lang.CharSequence value) {
-      validate(fields()[4], value);
+      validate(fields()[5], value);
       this.upc = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[5] = true;
       return this;
     }
 
@@ -494,7 +570,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * @return True if the 'upc' field has been set, false otherwise.
       */
     public boolean hasUpc() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[5];
     }
 
 
@@ -504,7 +580,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       */
     public io.pivotal.workshops.pkskafka.domain.events.order.LineItem.Builder clearUpc() {
       upc = null;
-      fieldSetFlags()[4] = false;
+      fieldSetFlags()[5] = false;
       return this;
     }
 
@@ -522,9 +598,9 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * @return This builder.
       */
     public io.pivotal.workshops.pkskafka.domain.events.order.LineItem.Builder setEstimatedDeliveryDate(java.lang.CharSequence value) {
-      validate(fields()[5], value);
+      validate(fields()[6], value);
       this.estimatedDeliveryDate = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[6] = true;
       return this;
     }
 
@@ -533,7 +609,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       * @return True if the 'estimatedDeliveryDate' field has been set, false otherwise.
       */
     public boolean hasEstimatedDeliveryDate() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[6];
     }
 
 
@@ -543,7 +619,7 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       */
     public io.pivotal.workshops.pkskafka.domain.events.order.LineItem.Builder clearEstimatedDeliveryDate() {
       estimatedDeliveryDate = null;
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[6] = false;
       return this;
     }
 
@@ -553,11 +629,12 @@ public class LineItem extends org.apache.avro.specific.SpecificRecordBase implem
       try {
         LineItem record = new LineItem();
         record.sku = fieldSetFlags()[0] ? this.sku : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.lineNumber = fieldSetFlags()[1] ? this.lineNumber : (java.lang.Integer) defaultValue(fields()[1]);
-        record.state = fieldSetFlags()[2] ? this.state : (io.pivotal.workshops.pkskafka.domain.events.order.LineItemState) defaultValue(fields()[2]);
-        record.purchasePrice = fieldSetFlags()[3] ? this.purchasePrice : (java.lang.Float) defaultValue(fields()[3]);
-        record.upc = fieldSetFlags()[4] ? this.upc : (java.lang.CharSequence) defaultValue(fields()[4]);
-        record.estimatedDeliveryDate = fieldSetFlags()[5] ? this.estimatedDeliveryDate : (java.lang.CharSequence) defaultValue(fields()[5]);
+        record.orderID = fieldSetFlags()[1] ? this.orderID : (java.lang.CharSequence) defaultValue(fields()[1]);
+        record.lineNumber = fieldSetFlags()[2] ? this.lineNumber : (java.lang.Integer) defaultValue(fields()[2]);
+        record.state = fieldSetFlags()[3] ? this.state : (io.pivotal.workshops.pkskafka.domain.events.order.LineItemState) defaultValue(fields()[3]);
+        record.purchasePrice = fieldSetFlags()[4] ? this.purchasePrice : (java.lang.Float) defaultValue(fields()[4]);
+        record.upc = fieldSetFlags()[5] ? this.upc : (java.lang.CharSequence) defaultValue(fields()[5]);
+        record.estimatedDeliveryDate = fieldSetFlags()[6] ? this.estimatedDeliveryDate : (java.lang.CharSequence) defaultValue(fields()[6]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

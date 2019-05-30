@@ -1,4 +1,4 @@
-package io.pivotal.workshops.pkskafka.order.domain;
+package io.pivotal.workshops.pkskafka.order.order.domain;
 
 import java.util.Iterator;
 import java.util.UUID;
@@ -18,8 +18,8 @@ import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 
-import io.pivotal.workshops.pkskafka.ResourceBinding;
 import io.pivotal.workshops.pkskafka.domain.events.order.*;
+import io.pivotal.workshops.pkskafka.order.ResourceBinding;
 import lombok.extern.apachecommons.CommonsLog;
 
 @Service
@@ -62,6 +62,7 @@ public class OrderService {
 					for (Iterator<LineItem> i = order.getLineItems().iterator(); i.hasNext(); ) 
 					{
 						lineItem = i.next();
+						lineItem.setOrderID(order.getOrderID());
 						lineItem.setState(LineItemState.in_process);
 						lineItem.setEstimatedDeliveryDate("");
 						

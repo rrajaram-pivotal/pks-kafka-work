@@ -32,7 +32,7 @@ public class OrderEventProcessor {
 			
 			
 			outputStream = orderEventStream
-					.filter((key,value) -> value.getState().equals(State.placed))
+					.filter((key,value) -> value.getState().equals(State.validated))
 					.flatMapValues(value -> value.getLineItems())
 					.map((key,value)-> new KeyValue<>(value.getSku().toString(), "0"))
 					.groupByKey()

@@ -1,4 +1,4 @@
-package io.pivotal.workshops.pkskafka.order.domain;
+package io.pivotal.workshops.pkskafka.order.order.domain;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -27,11 +27,11 @@ import org.springframework.messaging.MessageChannel;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import io.pivotal.workshops.pkskafka.ResourceBinding;
 import io.pivotal.workshops.pkskafka.domain.events.inventory.Inventory;
 import io.pivotal.workshops.pkskafka.domain.events.order.Customer;
 import io.pivotal.workshops.pkskafka.domain.events.order.CustomerAddr;
 import io.pivotal.workshops.pkskafka.domain.events.order.LineItem;
+import io.pivotal.workshops.pkskafka.order.ResourceBinding;
 import lombok.extern.apachecommons.CommonsLog;
 
 @Component
@@ -113,7 +113,7 @@ public class OrderEventSource implements ApplicationRunner {
 				lineItem.setLineNumber(1);
 				lineItem.setState("placed");
 				
-				String currentDate=new SimpleDateFormat("yyyy-mm-dd hh:mm:ss").format(Calendar.getInstance().getTime());
+				String currentDate=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(Calendar.getInstance().getTime());
 				OrderDTO order = new OrderDTO();
 				order.setCustomer(customer);
 				List<LineItemDTO> items = new ArrayList<LineItemDTO>();
