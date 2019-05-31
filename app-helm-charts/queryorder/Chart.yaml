@@ -1,0 +1,16 @@
+name: queryorder
+version: 0.0.1
+appVersion: 1.0.0
+description: Query Order Service
+icon: https://avatars1.githubusercontent.com/u/7809479
+keywords:
+- app
+- queryorder
+- event-driven
+home: https://appurl/queryorder/
+sources:
+- https://github.com/rrajaram-pivotal/pks-kafka-work/
+maintainers:
+- name: Mayuresh Krishna
+  email: makrishna@pivotal.io
+engine: gotpl

@@ -1,0 +1,18 @@
+dependencies:
+- name: order
+  repository: file://../order
+  version: 0.0.1
+- name: inventory
+  repository: file://../inventory
+  version: 0.0.1
+- name: credit
+  repository: file://../credit
+  version: 0.0.1
+- name: queryorder
+  repository: file://../queryorder
+  version: 0.0.1
+- name: analytics
+  repository: file://../analytics
+  version: 0.0.1
+digest: sha256:4b23c4757c081ca929a82a966039fdb12ab63dc107f29954de1ad47367d8faae
+generated: 2019-05-30T23:38:38.183714639-04:00
