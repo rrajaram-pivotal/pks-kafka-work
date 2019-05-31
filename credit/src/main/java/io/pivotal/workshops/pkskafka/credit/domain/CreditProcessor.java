@@ -41,8 +41,8 @@ public class CreditProcessor {
 			outputStream = orderEventStream.filter((key,value) -> value.getState().equals(State.placed))
 								.mapValues(value -> {
 									boolean creditValidated = true;
-									boolean random = true;
-									//boolean random = (randomGenerator.nextInt(2) == 0) ? true : false;
+									//boolean random = true;
+									boolean random = (randomGenerator.nextInt(2) == 1) ? true : false;
 									if (random == false) {
 										creditValidated=false;
 											log.info("Credit Validation Failed For Customer: " + value.getCustomer().getFirstName() + " " + value.getCustomer().getLastName() + " Random Value: " + random);

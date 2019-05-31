@@ -74,7 +74,7 @@ public class InventoryEventSource implements ApplicationRunner {
 				
 		
 		//  Executor to run the runnable task of generating inventory updates every 30 minutes
-		//Executors.newScheduledThreadPool(1).execute(createInventory);
+		Executors.newScheduledThreadPool(1).execute(createInventory);
 		Executors.newScheduledThreadPool(1).scheduleAtFixedRate(updateInventory, 1, 15, TimeUnit.MINUTES);
 		
 		

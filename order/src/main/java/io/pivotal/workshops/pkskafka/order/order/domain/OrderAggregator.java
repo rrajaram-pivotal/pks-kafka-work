@@ -69,6 +69,8 @@ public class OrderAggregator {
 			orderSerde.serializer().configure(props, false);
 			orderSerde.deserializer().configure(props, false);	
 			
+			orderValidationEventStream.foreach((key,value)-> log.info("Order Aggregator ----------------->"+key+"-"+value.toString()));
+			
 			KStream<String, Long> interimStream =	orderValidationEventStream
 					.groupByKey(Serialized.with(Serdes.String(),orderValSerde))
 					.windowedBy(SessionWindows.with(Duration.ofMinutes(5).toMinutes()))
@@ -123,7 +125,7 @@ public class OrderAggregator {
 								value1.setState(State.validated);
 							else
 								value1.setState(State.failed_validation);
-							return value1;
+													return value1;
 						}
 			        	
 					}, JoinWindows.of(Duration.ofMinutes(5).toMinutes()), Joined.with(Serdes.String(), orderSerde,Serdes.Long()));

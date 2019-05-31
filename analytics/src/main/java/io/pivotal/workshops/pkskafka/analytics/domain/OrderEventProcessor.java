@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import org.apache.kafka.streams.KeyValue;
 import org.apache.kafka.streams.kstream.KStream;
+import org.apache.kafka.streams.kstream.KTable;
 import org.apache.kafka.streams.kstream.Materialized;
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.StreamListener;
@@ -27,8 +28,8 @@ public class OrderEventProcessor {
 		KStream<String, Long> outputStream = null;
 		try {
 	
-			//orderEventStream.foreach(
-			//		(key,value)->log.info("Messages in Order Event Processor ---> " +key + " = " + value.getOrderId()));
+			/*orderEventStream.foreach(
+					(key,value)->log.info("Messages in Order Event Processor ---> " +key + " = " + value.getOrderID()));*/
 			
 			
 			outputStream = orderEventStream
