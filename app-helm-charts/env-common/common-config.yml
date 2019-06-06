@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-common
+data:
+  spring.cloud.stream.schemaRegistryClient.endpoint: "http://schemaregistry.operator.svc.cluster.local:8081"
+  spring.cloud.stream.kafka.binder.configuration.security.protocol: "SASL_PLAINTEXT"
+  spring.cloud.stream.kafka.binder.configuration.sasl.mechanism: "PLAIN"
+  spring.cloud.stream.kafka.binder.configuration.sasl.jaas.config: "org.apache.kafka.common.security.plain.PlainLoginModule required username='test' password='test123';"
+  spring.cloud.stream.kafka.streams.binder.configuration.security.protocol: "SASL_PLAINTEXT"
+  spring.cloud.stream.kafka.streams.binder.configuration.sasl.mechanism: "PLAIN"
+  spring.cloud.stream.kafka.streams.binder.configuration.sasl.jaas.config: "org.apache.kafka.common.security.plain.PlainLoginModule required username='test' password='test123';"
+  bootstrap.servers: "kafka.operator.svc.cluster.local:9071"
+  spring.cloud.stream.kafka.streams.binder.brokers: "kafka.operator.svc.cluster.local:9071"
+  spring.cloud.stream.kafka.binder.brokers: "kafka.operator.svc.cluster.local:9071"
+  spring.cloud.stream.kafka.binder.zkNodes: "zookeeper.operator.svc.cluster.local:2181/kafka-operator"
+  spring.cloud.stream.kafka.streams.binder.zkNodes: "zookeeper.operator.svc.cluster.local:2181/kafka-operator"

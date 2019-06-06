@@ -1,0 +1,16 @@
+name: inventory
+version: 0.0.1
+appVersion: 1.0.0
+description: Inventory Service
+icon: https://avatars1.githubusercontent.com/u/7809479
+keywords:
+- app
+- inventory
+- event-driven
+home: https://appurl/inventory/
+sources:
+- https://github.com/rrajaram-pivotal/pks-kafka-work/
+maintainers:
+- name: Mayuresh Krishna
+  email: makrishna@pivotal.io
+engine: gotpl

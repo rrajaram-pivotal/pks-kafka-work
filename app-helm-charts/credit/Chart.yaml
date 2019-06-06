@@ -1,0 +1,16 @@
+name: credit
+version: 0.0.1
+appVersion: 1.0.0
+description: Credit Service
+icon: https://avatars1.githubusercontent.com/u/7809479
+keywords:
+- app
+- credit
+- event-driven
+home: https://appurl/credit/
+sources:
+- https://github.com/rrajaram-pivotal/pks-kafka-work/
+maintainers:
+- name: Mayuresh Krishna
+  email: makrishna@pivotal.io
+engine: gotpl
