@@ -75,7 +75,7 @@ public class OrderValidationProcessor {
 		
 		try {
 			
-			
+			orderEventStream.foreach((key,value) -> log.info("Order Details " + value.toString()));
 			
 			lineItemStream = orderEventStream
 					.filter((key,value) -> value.getState().equals(State.placed))

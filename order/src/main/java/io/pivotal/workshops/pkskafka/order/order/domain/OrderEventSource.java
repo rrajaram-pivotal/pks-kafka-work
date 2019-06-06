@@ -160,7 +160,7 @@ public class OrderEventSource implements ApplicationRunner {
 		
 		//  Executor to run the runnable task of generating inventory updates every 30 minutes
 		//Executors.newScheduledThreadPool(1).execute(createInventory);
-		Executors.newScheduledThreadPool(1).scheduleAtFixedRate(generateOrder, 1, 1, TimeUnit.MINUTES);
+		Executors.newScheduledThreadPool(1).scheduleAtFixedRate(generateOrder, 1, 2, TimeUnit.MINUTES);
 		
 		
 	}

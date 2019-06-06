@@ -11663,3 +11663,160 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact io.confluent:
 2019-05-31 07:35:43,132 [Worker-302: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2019-05-31 07:35:43,134 [Worker-302: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-05-31 07:35:43,134 [Worker-302: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/analytics/src/test/resources
+2019-05-31 08:51:32,402 [Worker-287: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-31 08:51:32,402 [Worker-287: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-31 08:51:32,403 [Worker-287: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-31 08:51:32,406 [Worker-287: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-31 08:51:32,406 [Worker-287: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/queryorder/src/test/resources
+2019-05-31 09:55:26,975 [Worker-307: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-31 09:55:26,976 [Worker-307: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-31 09:55:26,978 [Worker-307: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-31 09:55:26,979 [Worker-307: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-31 09:55:26,979 [Worker-307: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/inventory/src/test/resources
+2019-05-31 09:55:33,172 [Worker-307: Launching inventory - InventoryApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-05-31 09:55:33,203 [Worker-307: Launching inventory - InventoryApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:09:27,850 [Worker-394: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 10:09:27,851 [Worker-394: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 10:09:27,852 [Worker-394: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 10:09:27,853 [Worker-394: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 10:09:27,853 [Worker-394: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 10:09:56,260 [Worker-389: Launching order - Application] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:09:56,293 [Worker-389: Launching order - Application] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:15:19,718 [Worker-391: Launching inventory - InventoryApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:15:19,752 [Worker-391: Launching inventory - InventoryApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:15:53,348 [Worker-394: Launching inventory - InventoryApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:15:53,385 [Worker-394: Launching inventory - InventoryApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:18:39,352 [Worker-390: Launching inventory - InventoryApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:18:39,391 [Worker-390: Launching inventory - InventoryApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:20:50,718 [Worker-395: Launching order - Application] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:20:50,767 [Worker-395: Launching order - Application] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:22:51,985 [Worker-383: Launching credit - CreditApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:22:52,030 [Worker-383: Launching credit - CreditApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:30:42,789 [Worker-380: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 10:30:42,789 [Worker-380: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 10:30:42,790 [Worker-380: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 10:30:42,791 [Worker-380: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 10:30:42,791 [Worker-380: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 10:49:28,077 [Worker-394: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 10:49:28,077 [Worker-394: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 10:49:28,078 [Worker-394: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 10:49:28,079 [Worker-394: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 10:49:28,079 [Worker-394: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 10:51:59,056 [Worker-394: Launching order - Application] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:51:59,090 [Worker-394: Launching order - Application] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:52:27,247 [Worker-391: Launching order - Application] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:52:27,281 [Worker-391: Launching order - Application] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:53:22,818 [Worker-383: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 10:53:22,818 [Worker-383: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 10:53:22,820 [Worker-383: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 10:53:22,822 [Worker-383: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 10:53:22,822 [Worker-383: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 10:55:50,195 [Worker-389: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 10:55:50,195 [Worker-389: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 10:55:50,196 [Worker-389: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 10:55:50,198 [Worker-389: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 10:55:50,198 [Worker-389: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 10:56:05,823 [Worker-383: Launching order - Application] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:56:05,873 [Worker-383: Launching order - Application] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:58:11,214 [Worker-389: Launching inventory - InventoryApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:58:11,245 [Worker-389: Launching inventory - InventoryApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:58:16,504 [Worker-394: Launching credit - CreditApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 10:58:16,538 [Worker-394: Launching credit - CreditApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 11:03:13,465 [Worker-287: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 11:03:13,465 [Worker-287: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 11:03:13,467 [Worker-287: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 11:03:13,468 [Worker-287: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 11:03:13,468 [Worker-287: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 11:04:40,154 [Worker-391: Launching credit - CreditApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 11:04:40,188 [Worker-391: Launching credit - CreditApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 11:04:44,472 [Worker-287: Launching inventory - InventoryApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 11:04:44,503 [Worker-287: Launching inventory - InventoryApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 11:05:25,293 [Worker-391: Launching order - Application] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 11:05:25,323 [Worker-391: Launching order - Application] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 11:24:10,341 [Worker-396: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 11:24:10,341 [Worker-396: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 11:24:10,342 [Worker-396: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 11:24:10,344 [Worker-396: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 11:24:10,344 [Worker-396: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 11:27:42,195 [Worker-394: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 11:27:42,195 [Worker-394: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 11:27:42,197 [Worker-394: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 11:27:42,200 [Worker-394: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 11:27:42,200 [Worker-394: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 11:28:03,096 [Worker-400: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 11:28:03,096 [Worker-400: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 11:28:03,098 [Worker-400: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 11:28:03,099 [Worker-400: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 11:28:03,100 [Worker-400: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 12:36:52,172 [Worker-411: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 12:36:52,172 [Worker-411: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 12:36:52,174 [Worker-411: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 12:36:52,175 [Worker-411: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 12:36:52,175 [Worker-411: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 12:38:55,288 [Worker-408: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 12:38:55,288 [Worker-408: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 12:38:55,289 [Worker-408: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 12:38:55,290 [Worker-408: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 12:38:55,290 [Worker-408: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 12:41:39,650 [Worker-406: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 12:41:39,650 [Worker-406: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 12:41:39,652 [Worker-406: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 12:41:39,654 [Worker-406: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 12:41:39,654 [Worker-406: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 12:42:23,085 [Worker-408: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 12:42:23,086 [Worker-408: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 12:42:23,088 [Worker-408: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 12:42:23,089 [Worker-408: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 12:42:23,090 [Worker-408: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 13:02:47,137 [Worker-410: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 13:02:47,137 [Worker-410: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 13:02:47,138 [Worker-410: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 13:02:47,140 [Worker-410: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 13:02:47,140 [Worker-410: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 13:03:05,916 [Worker-415: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 13:03:05,917 [Worker-415: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 13:03:05,918 [Worker-415: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 13:03:05,920 [Worker-415: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 13:03:05,920 [Worker-415: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 13:03:20,010 [Worker-415: Launching inventory - InventoryApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 13:03:20,041 [Worker-415: Launching inventory - InventoryApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 13:03:37,271 [Worker-415: Launching credit - CreditApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 13:03:37,321 [Worker-415: Launching credit - CreditApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 13:05:01,257 [Worker-415: Launching order - Application] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 13:05:01,287 [Worker-415: Launching order - Application] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 13:06:44,181 [Worker-419: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 13:06:44,181 [Worker-419: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 13:06:44,182 [Worker-419: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 13:06:44,184 [Worker-419: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 13:06:44,184 [Worker-419: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 13:10:31,857 [Worker-414: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 13:10:31,857 [Worker-414: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 13:10:31,859 [Worker-414: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 13:10:31,863 [Worker-414: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 13:10:31,863 [Worker-414: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 13:13:39,965 [Worker-413: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 13:13:39,965 [Worker-413: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 13:13:39,966 [Worker-413: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 13:13:39,967 [Worker-413: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 13:13:39,967 [Worker-413: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 13:13:51,884 [Worker-420: Launching order - Application] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 13:13:51,920 [Worker-420: Launching order - Application] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 13:17:39,373 [Worker-418: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 13:17:39,373 [Worker-418: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 13:17:39,374 [Worker-418: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 13:17:39,375 [Worker-418: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 13:17:39,375 [Worker-418: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 13:17:44,821 [Worker-417: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 13:17:44,821 [Worker-417: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 13:17:44,822 [Worker-417: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 13:17:44,823 [Worker-417: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 13:17:44,823 [Worker-417: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 13:18:03,343 [Worker-415: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 13:18:03,343 [Worker-415: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-06 13:18:03,345 [Worker-415: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-06-06 13:18:03,347 [Worker-415: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-06-06 13:18:03,347 [Worker-415: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rrajaram/eclipse-workspace/order/src/test/resources
+2019-06-06 13:18:21,413 [Worker-421: Launching order - Application] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 13:18:21,446 [Worker-421: Launching order - Application] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 13:25:28,064 [Worker-421: Launching analytics - Application] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes
+2019-06-06 13:25:28,099 [Worker-421: Launching analytics - Application] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/events: io.pivotal.workshop.pkskafka:events:1.0 with classifier null to /events/target/classes

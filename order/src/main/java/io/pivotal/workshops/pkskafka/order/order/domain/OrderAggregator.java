@@ -16,6 +16,8 @@ import org.apache.kafka.streams.kstream.KTable;
 import org.apache.kafka.streams.kstream.KeyValueMapper;
 import org.apache.kafka.streams.kstream.Materialized;
 import org.apache.kafka.streams.kstream.Predicate;
+import org.apache.kafka.streams.kstream.Produced;
+import org.apache.kafka.streams.kstream.Reducer;
 import org.apache.kafka.streams.kstream.Serialized;
 import org.apache.kafka.streams.kstream.SessionWindows;
 import org.apache.kafka.streams.kstream.TimeWindows;
@@ -111,44 +113,86 @@ public class OrderAggregator {
 						@Override
 						public boolean test(String key, Long value) {
 							log.info("Filter in Order Aggregator   ----------------> " + key);
-							return value >=1;
+							return value >=2;
 						}
 						
 					});
 			
-			//interimStream.foreach((key,value)->log.info("Interim Stream --------------> " + key + " - " + value));
-			outputStream =  orderKStream.join(interimStream, new ValueJoiner<Order, Long, Order>() {
-
-						@Override
-						public Order apply(Order value1, Long value2) {
-							if (value2 == 2)
-								value1.setState(State.validated);
-							else
-								value1.setState(State.failed_validation);
-													return value1;
-						}
-			        	
-					}, JoinWindows.of(Duration.ofMinutes(5).toMinutes()), Joined.with(Serdes.String(), orderSerde,Serdes.Long()));
+			interimStream.foreach((key,value)->log.info("Interim Stream --------------> " + key + " - " + value));
+			orderKStream.foreach((key,value)->log.info("Order K Stream --------------> " + key + " - " + value));
 			
-			/*outputStream = interimStream
-			        .join(orderKStream, new ValueJoiner<Long, Order, Order>() {
+			outputStream =  orderKStream
+					.filter((key,value) -> value.getState().equals(State.placed))
+					.join(interimStream, new ValueJoiner<Order, Long, Order>() {
 
-						@Override
-						public Order apply(Long value1, Order value2) {
-							if (value1 == 2)
-								value2.setState(State.validated);
-							else
-								value2.setState(State.failed_validation);
-							return value2;
-						}
-			        	
-					}, JoinWindows.of(Duration.ofMinutes(5).toMinutes()), Joined.with(Serdes.String(), Serdes.Long(), orderSerde));*/
-	                	
-					
+				@Override
+				public Order apply(Order value1, Long value2) {
+					if (value2 == 2)
+						value1.setState(State.validated);
+					log.info("Final Join in Order Aggregator  " + value1.toString());
+					return value1;
+				}
+	        	
+			}, JoinWindows.of(Duration.ofMinutes(5).toMinutes()), Joined.with(Serdes.String(), orderSerde,Serdes.Long()));
+			
+			KStream<String, OrderValidation> interimFailedValStream = orderValidationEventStream.filter((key, value) -> OrderValidationResult.FAIL.equals(value.getValidationResult()));
+			
+			
+		
+			orderKStream
+			.filter((key,value) -> value.getState().equals(State.placed))
+			.join(interimFailedValStream, new ValueJoiner<Order, OrderValidation, Order>() {
+				@Override
+				public Order apply(Order value1, OrderValidation value2) {
+					if (value2.getValidationResult().equals(OrderValidationResult.FAIL))
+					{
+						value1.setState(State.failed_validation);
+					}
+					log.info("Final Join in Order Aggregator  " + value1.toString());
+					return value1;
+
+				}
 				
-					//outputStream.foreach((key,value)->log.info("Order Validation Aggregator " + key + " - " + value));
+			}, JoinWindows.of(Duration.ofMinutes(5).toMinutes()), Joined.with(Serdes.String(), orderSerde,orderValSerde))
+			.groupByKey(Serialized.with(Serdes.String(),orderSerde))
+			.reduce(new Reducer<Order>() {
+				
+				@Override
+				public Order apply(Order value1, Order value2) {
+					
+					return value1;
+				}
+			}, Materialized.with(Serdes.String(), orderSerde))
+			.toStream().to("order-event-topic", Produced.with(Serdes.String(), orderSerde));
 			
-			
+		/*	orderValidationEventStream
+			.filter((key, value) -> OrderValidationResult.FAIL.equals(value.getValidationResult()))
+			.join(orderKStream, new ValueJoiner<OrderValidation, Order, Order>() {
+
+				@Override
+				public Order apply(OrderValidation value1, Order value2) {
+					if (value1.getValidationResult().equals(OrderValidationResult.FAIL))
+					{
+						value2.setState(State.failed_validation);
+					}
+					log.info("Final Join in Order Aggregator  " + value1.toString());
+					return value2;
+
+				}
+	
+			}
+			, JoinWindows.of(Duration.ofMinutes(5).toMinutes()), Joined.with(Serdes.String(), orderValSerde,orderSerde))
+			.groupByKey(Serialized.with(Serdes.String(),orderSerde))
+			.reduce(new Reducer<Order>() {
+				
+				@Override
+				public Order apply(Order value1, Order value2) {
+					
+					return value1;
+				}
+			}, Materialized.with(Serdes.String(), orderSerde))
+			.toStream().to("order-event-topic", Produced.with(Serdes.String(), orderSerde));
+*/			
 			} catch (Exception ex) 
 			{
 				ex.printStackTrace();
