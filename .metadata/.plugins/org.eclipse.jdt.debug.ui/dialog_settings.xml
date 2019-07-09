@@ -12,7 +12,7 @@
 	</section>
 	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
 		<item value="true" key="ShowStatusLine"/>
-		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode&gt;=order/src\/main\/java&amp;lt;io.pivotal.workshops.pkskafka.order{OrderApplication.java[OrderApplication&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=order/src\/main\/java&amp;lt;io.pivotal.workshops.pkskafka{Application.java[Application&lt;/infoNode&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode&gt;=order/src\/main\/java&amp;lt;io.pivotal.workshops.pkskafka.order{OrderApplication.java[OrderApplication&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=order/src\/main\/java&amp;lt;io.pivotal.workshops.pkskafka{Application.java[Application&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=order/src\/main\/java&amp;lt;io.pivotal.workshops.pkskafka.order{Application.java[Application&lt;/infoNode&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
 		<section name="DialogBoundsSettings">
 			<item value="600" key="DIALOG_WIDTH"/>
 			<item value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont" key="DIALOG_FONT_NAME"/>

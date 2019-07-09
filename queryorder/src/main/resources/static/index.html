@@ -19,7 +19,8 @@
 	</head>
 
 	<body>
-		<table ng-controller="QueryOrder" border="1">
+		<div ng-controller="QueryOrder">
+		<table  border="1">
 			<tr>
 				<td><b>Order Id</b></td>
 				<td><b>Time Placed</b></td>
@@ -45,5 +46,6 @@
 				<td>{{order.lineItems[0].purchasePrice}}</td>
 			</tr>
 		</table>
+		</div>
 	</body>
 </html>

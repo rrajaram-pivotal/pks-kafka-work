@@ -2,27 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="inventoryStore" key="selection"/>
+		<item value="plugin" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="inventoryStore"/>
-			<item value="5eabab6c-1504-41a0-89e3-6e0d4ad8c1d1"/>
-			<item value="outputStream"/>
-			<item value="Inventory Created On Start Up"/>
-			<item value="Inventory Added For SKU"/>
-			<item value="Updating Inventory after validating Order"/>
-			<item value="QueryOrderMapper"/>
-			<item value="findOrder"/>
-			<item value="orderstreamin"/>
-			<item value="orderstream"/>
-			<item value="consumer"/>
-			<item value="client"/>
-			<item value="Find Order for ID"/>
-			<item value="order-consumer-v1"/>
-			<item value="clientId=order-consumer-v1"/>
+			<item value="plugin"/>
+			<item value="pcmv"/>
+			<item value="Interim Stream"/>
+			<item value="Interim Stream --------------&gt;"/>
+			<item value="Filter in Order Aggregator"/>
+			<item value="79317e3e-b4f6-4715-b733-1caf0b2a0930"/>
+			<item value="Sku Key "/>
+			<item value="Line Item Stream in Inventory Processor "/>
+			<item value="951f8710-1d7e-4fc4-b05b-c3eddd7b34b5"/>
+			<item value="Returning Order ValidationAggs"/>
+			<item value="Filter in Order Aggregator "/>
+			<item value="75e5042e-a22b-4366-abef-3c45f4d649e3"/>
+			<item value=" 5f8af692-5a48-4a82-a9a9-8053c04390da"/>
+			<item value="5f8af692-5a48-4a82-a9a9-8053c04390da"/>
+			<item value="Value From Line Item "/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>

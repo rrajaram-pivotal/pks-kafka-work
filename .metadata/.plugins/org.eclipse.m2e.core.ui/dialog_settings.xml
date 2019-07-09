@@ -25,6 +25,8 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="/Users/rrajaram/eclipse-workspace/credit"/>
+			<item value="/Users/rrajaram/eclipse-workspace/order"/>
 			<item value="/Users/rrajaram/eclipse-workspace/analytics"/>
 		</list>
 		<list key="projectNameTemplate">
