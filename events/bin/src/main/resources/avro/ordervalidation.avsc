@@ -1,0 +1,20 @@
+[
+{"namespace": "io.pivotal.workshops.pkskafka.domain.events.ordervalidation",
+ "type": "enum",
+ "name": "OrderValidationType",
+ "symbols" : ["INVENTORY_CHECK", "FRAUD_CHECK", "ORDER_DETAILS_CHECK", "CREDIT_CHECK"]
+},
+{"namespace": "io.pivotal.workshops.pkskafka.domain.events.ordervalidation",
+ "type": "enum",
+ "name": "OrderValidationResult",
+ "symbols" : ["PASS", "FAIL", "ERROR"]
+},
+{"namespace": "io.pivotal.workshops.pkskafka.domain.events.ordervalidation",
+ "type": "record",
+ "name": "OrderValidation",
+ "fields": [
+     {"name": "orderId", "type": "string"},
+     {"name": "checkType", "type": "OrderValidationType"},
+     {"name": "validationResult",  "type": "OrderValidationResult"}
+ ]
+}]

@@ -1,0 +1,49 @@
+[
+  {
+        "type": "record",
+        "namespace": "io.pivotal.workshops.pkskafka.domain.events.order",
+        "name": "CustomerAddr",
+        "fields": [
+          { "name": "address", "type": "string", "doc": "Address Line 1" },
+          { "name": "city", "type": "string" },
+          { "name": "state", "type": "string" },
+          { "name": "zipcode", "type": ["string", "int"] }
+        ]},
+    {
+       "type": "record",
+       "namespace": "io.pivotal.workshops.pkskafka.domain.events.order",
+       "name": "Customer",
+       "fields": [
+         { "name": "firstName", "type": "string", "doc": "Customer's first name"},
+         { "name": "lastName", "type": "string","doc": "Customer's last name" },
+         { "name": "automatedEmail", "type": "boolean", "default": true, "doc": "True if customer signed up for receiving promotional emails"},
+         { "name": "customerEmails", "type": {"type": "array", "items": "string"}, "default": [], "doc": "Customer Email Addresses"},
+         { "name": "customerAddress", "type": {"type": "array", "items":"io.pivotal.workshops.pkskafka.domain.events.order.CustomerAddr"}, "doc": "Complex Type - Refer Customer Address" }
+       ]},
+
+  {
+    "type": "record",
+  "name": "Order",
+  "namespace": "io.pivotal.workshops.pkskafka.domain.events.order",
+  "doc": "Avro Schema for Order Records",
+  "fields": [
+    {"name": "orderID","doc": "Order Identifier","type":"string", "default":""},
+    {"name": "customer","doc": "Customer Details","type":"io.pivotal.workshops.pkskafka.domain.events.order.Customer" },
+    {"name": "timePlaced","doc": " Time Order Was Placed","type":"string", "default":""},
+    {"name": "lastUpdated","doc": "Last Updated Time","type":"string", "default":""},
+    {"name": "state","doc": "Order State Enum","type":{"name": "State","type":"enum","symbols":["placed","in_review","insufficient_inventory","failed_validation","validated","canceled","in_fulfillment"]}, "default":""},
+    {"name": "lineItems","type": {
+          "type": "array",
+          "items": {"name": "LineItem","type": "record", "fields": [
+              {"name": "sku", "type": "string"},
+              {"name": "orderID","doc": "Order Identifier","type":"string", "default":""},
+              {"name": "lineNumber", "type": "int"},
+              {"name": "state", "type": {"name": "LineItemState","type": "enum","symbols": ["placed","in_process","validated", "insufficient_inventory","canceled"]}},
+              {"name": "purchasePrice", "type": "float"},
+              {"name": "upc", "type": "string"},
+              {"name": "estimatedDeliveryDate", "type": "string", "default":""}
+            ]}}
+          }
+        ]
+      }
+]
